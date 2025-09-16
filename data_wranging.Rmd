@@ -16,6 +16,8 @@ When you click the **Knit** button a document will be generated that includes bo
 
 ```{r}
 library(tidyverse)
+library(readxl)
+library(haven)
 ```
 
 Lets import data
@@ -62,4 +64,28 @@ pups_df=
     )
 pups_df=
   janitor::clean_names(pups_df)
+```
+
+## Excel
+```{r}
+mlb_df=
+  read_excel("mlb11.xlsx")
+```
+
+import LotR word counts
+```{r}
+fotr_df=
+  read_excel("LotR_Words.xlsx", range="B3:D6")
+```
+##SAS??
+import the PULSE data
+```{r}
+pulse_df=
+  read_sas("public_pulse_data.sas7bdat")
+```
+
+## why hate read.csv
+```{r, eval=FALSE}
+litters_df_base = 
+  read.csv("FAS_litters.csv")
 ```
